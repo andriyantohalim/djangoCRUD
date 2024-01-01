@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block title %}Confirm Delete{% endblock title %}
+
+{% block content %}
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <p class="mb-4">Are you sure you want to delete "{{ object }}"?</p>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-danger">Confirm</button>
+            <a href="/book_list" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+
+
+{% endblock content %}
+

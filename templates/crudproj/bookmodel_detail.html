@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}Book Detail{% endblock title %}
+
+{% block content %}
+    <h1 class="display-4">{{ object.title }}</h1>
+
+    <h2 class="h4 mt-4">Author:</h2>
+    <p>{{ object.author }}</p>
+
+<!--    <h2 class="h4 mt-4">Year:</h2>-->
+<!--    <p>{{ object.year }}</p>-->
+
+    <h2 class="h4 mt-4">Abstract:</h2>
+    <p>{{ object.abstract }}</p>
+
+    <h2 class="h4 mt-4">Price:</h2>
+    <p>{{ object.price }}</p>
+
+    <a href="/book_list" class="btn btn-secondary">Back</a>
+{% endblock content %}

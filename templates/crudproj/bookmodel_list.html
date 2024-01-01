@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% block title %}Book List{% endblock title %}
+
+{% block content %}
+    <a href="/book_create" class="btn btn-primary mb-3">Create Book</a>
+
+    <ul class="list-group">
+        <!-- Iterate over object_list -->
+        {% for object in object_list %}
+        <!-- Display Objects -->
+        <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+
+                <div class="text-start">
+                    <p class="">{{ object.title }}</p>
+                </div>
+
+                <div class="text-end">
+                    <a href="/book_detail/{{ object.id }}" class=" btn btn-primary me-3">Detail</a>
+                    <a href="/book_update/{{ object.id }}" class=" btn btn-primary me-3">Update</a>
+                    <a href="/book_delete/{{ object.id }}" class=" btn btn-primary">Delete</a>
+                </div>
+            </div>
+
+        </li>
+
+        <!-- If object_list is empty  -->
+        {% empty %}
+        <li class="list-group-item">No objects yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+
